@@ -5,7 +5,7 @@ public class TankGraphics : MonoBehaviour
 {
     [SerializeField] Animator anim;
     [SerializeField] AttackFxPool fxPool;
-    [SerializeField] BulletPool bulletPool;
+    //[SerializeField] BulletPool bulletPool;
 
     InputAction fireAction;
 
@@ -26,6 +26,6 @@ public class TankGraphics : MonoBehaviour
     {
         anim.SetTrigger("attack");
         fxPool.SpawnFX();
-        bulletPool.SpawnBullet();
+        //bulletPool.SpawnBullet();
     }
 }
