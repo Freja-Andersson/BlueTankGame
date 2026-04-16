@@ -13,7 +13,7 @@ public class TankGraphics : MonoBehaviour
     {
         fireAction = InputSystem.actions.FindAction("Fire");
     }
-    private void Update()
+    /*private void Update()
     {
         //debug
         if(fireAction.WasPerformedThisFrame())
@@ -27,5 +27,5 @@ public class TankGraphics : MonoBehaviour
         anim.SetTrigger("attack");
         fxPool.SpawnFX();
         //bulletPool.SpawnBullet();
-    }
+    } */
 }
