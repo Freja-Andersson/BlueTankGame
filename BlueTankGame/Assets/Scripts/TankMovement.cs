@@ -5,7 +5,7 @@ public class TankMovement : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] float rotateSensitivity = 1f;
-    [SerializeField] bool inRotation;
+    [SerializeField] float moveThresholdAngle = 10f; // if the moveangle is less then this, tank starts moving forward
 
     Vector3 movementDirection;
 
@@ -31,27 +31,21 @@ public class TankMovement : MonoBehaviour
         Vector2 moveInput = moveAction.ReadValue<Vector2>();
         movementDirection = Vector3.right * moveInput.x + Vector3.forward * moveInput.y;
 
-        if(movementDirection.sqrMagnitude > 0.01f) // only rotates if there is movement 
-        {
-            inRotation = true;
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movementDirection), Time.fixedDeltaTime * rotateSensitivity);
-        }
-        else
-        {
-            inRotation = false;
+        if (movementDirection.sqrMagnitude > 0.01f)
+        {   
+            // Calculate  the target ratation
+            Quaternion targetRotation = Quaternion.LookRotation(movementDirection);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.fixedDeltaTime * rotateSensitivity);
+
+            float angle = Vector3.Angle(transform.forward, movementDirection); //checks the moveangle
+
+            // 3. Om vinkeln är liten nog (vi har roterat färdigt), rör oss framåt
+            if (angle < moveThresholdAngle) //If the moveangle is less, the tank starts to move forward
+            {
+                tankRigidbody.MovePosition(transform.position + transform.forward * moveSpeed * Time.fixedDeltaTime);
+            }
         }
 
-        //fix so the tank only rotates, and not moves until the right direction and than move forward
-
-        if(inRotation) // only rotate to change the direction
-        {
-            tankRigidbody.MovePosition(transform.position + movementDirection * moveSpeed * Time.fixedDeltaTime);
-        }
-        if (!inRotation) // move the tank forward in the direction
-        {
-            tankRigidbody.MovePosition(transform.position + movementDirection * moveSpeed * Time.fixedDeltaTime);
-        }
-        
     }
 
     
