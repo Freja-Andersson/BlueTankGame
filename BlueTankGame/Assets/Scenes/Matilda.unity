@@ -357,6 +357,7 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+  shootCooldown: 0.6
   lookDirection: {x: 0, y: 0, z: 0}
   Sensetivity: 5
   ShootRange: 20
