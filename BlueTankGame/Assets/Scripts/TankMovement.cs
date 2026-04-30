@@ -7,18 +7,19 @@ public class TankMovement : MonoBehaviour
     [SerializeField] float rotateSensitivity = 1f;
     [SerializeField] float moveThresholdAngle = 10f; // if the moveangle is less then this, tank starts moving forward
 
+    Vector2 moveInput;
     Vector3 movementDirection;
 
-    InputAction moveAction;
-
+    //InputAction moveAction;
+    PlayerInput playerInput;
     Rigidbody tankRigidbody;
 
     void Awake()
     {
-
+        playerInput = GetComponent<PlayerInput>();
         tankRigidbody = GetComponent<Rigidbody>();
-
-        moveAction = InputSystem.actions.FindAction("Move");
+        
+        //moveAction = InputSystem.actions.FindAction("Move");
     }
 
     void FixedUpdate()
@@ -26,9 +27,16 @@ public class TankMovement : MonoBehaviour
         HandleMovement();
     }
 
+    public void OnMove(InputValue context)
+    {
+        moveInput = context.Get<Vector2>();
+
+        Debug.Log("Move input received: " + moveInput);
+
+    }
+
     void HandleMovement() // rotate the tank to face the movement direction
     {
-        Vector2 moveInput = moveAction.ReadValue<Vector2>();
         movementDirection = Vector3.right * moveInput.x + Vector3.forward * moveInput.y;
 
         if (movementDirection.sqrMagnitude > 0.01f)
@@ -39,7 +47,6 @@ public class TankMovement : MonoBehaviour
 
             float angle = Vector3.Angle(transform.forward, movementDirection); //checks the moveangle
 
-            // 3. Om vinkeln är liten nog (vi har roterat färdigt), rör oss framåt
             if (angle < moveThresholdAngle) //If the moveangle is less, the tank starts to move forward
             {
                 tankRigidbody.MovePosition(transform.position + transform.forward * moveSpeed * Time.fixedDeltaTime);
