@@ -4,25 +4,40 @@ using UnityEngine.InputSystem;
 
 public class TankShoot : MonoBehaviour
 {
-    private InputAction ShootAction;
+    [SerializeField]private InputAction ShootAction;
     private InputAction LookAction;
-    RaycastHit hitInfo;
-    Vector3 lookDirection;
+    [SerializeField] Vector3 lookDirection;
+    [SerializeField] float Sensetivity = 5f;
+    [SerializeField] float ShootRange = 20f;
+    [SerializeField] Animator anim;
+    [SerializeField] AttackFxPool fxPool;
+    [SerializeField] GameObject Bullet;
 
 
     void Start()
     {
-        ShootAction = InputSystem.actions.FindAction("Shoot");
+        ShootAction = InputSystem.actions.FindAction("Attack");
         LookAction = InputSystem.actions.FindAction("Look");
     }
 
     void Update()
-    {
-        lookDirection = LookAction.ReadValue<Vector2>();
-        //if (ShootAction.WasPerformedThisFrame())
-       // {
-          //  Physics.Raycast(transform.position, transform.forward, out hitInfo, 1f);
+    {       
+       Vector2 lookInput = LookAction.ReadValue<Vector2>();
+       Vector3 lookDirection = new Vector3(lookInput.x, 0f, lookInput.y);
+       if (lookDirection.sqrMagnitude > 0.01f)
+       {
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookDirection), Time.deltaTime * Sensetivity);
+       }
 
-       // }
+      
+       if (ShootAction.WasPerformedThisFrame())
+       {
+            print("shoot");
+            anim.SetTrigger("attack");
+            fxPool.SpawnFX();
+            Instantiate(Bullet, transform.position, transform.rotation);
+
+           
+       }
     }
 }

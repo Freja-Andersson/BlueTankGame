@@ -26,6 +26,6 @@ public class TankGraphics : MonoBehaviour
     {
         anim.SetTrigger("attack");
         fxPool.SpawnFX();
-        //bulletPool.SpawnBullet();
+        bulletPool.SpawnBullet();
     } */
 }
