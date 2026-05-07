@@ -19,7 +19,7 @@ public class AssignGamepad : MonoBehaviour
             var d0 = gamepads[0];
             InputUser.PerformPairingWithDevice(d0, player1.user);
             player1.user.AssociateActionsWithUser(player1.actions);
-            Debug.Log("Player1 paired with" +d0);
+            player1.gameObject.name = "Player1";
         }
 
         if (gamepads.Count > 1 && player2 != null)
@@ -27,7 +27,7 @@ public class AssignGamepad : MonoBehaviour
             var d1 = gamepads[1];
             InputUser.PerformPairingWithDevice(d1, player2.user);
             player2.user.AssociateActionsWithUser(player2.actions);
-            Debug.Log("PLAYER 2 pared " + d1);
+            player2.gameObject.name = "Player2";
         }
        
 

@@ -27,13 +27,18 @@ public class TankMovement : MonoBehaviour
         HandleMovement();
     }
 
-    public void OnMove(InputValue context)
+    public void Move(InputAction.CallbackContext context)
+    {
+        moveInput = context.ReadValue<Vector2>();
+    }
+
+    /* public void OnMove(InputValue context)
     {
         moveInput = context.Get<Vector2>();
 
         Debug.Log("Move input received: " + moveInput);
 
-    }
+    } */
 
     void HandleMovement() // rotate the tank to face the movement direction
     {
