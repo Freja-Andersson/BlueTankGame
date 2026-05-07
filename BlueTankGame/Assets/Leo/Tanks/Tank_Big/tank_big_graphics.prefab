@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3797848393360122016}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: gunPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3111352242853930717}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: headPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 3730469026112798376}
   - component: {fileID: 7695796770336872743}
   - component: {fileID: 7968369463021014794}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tank_big_gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,9 +166,9 @@ GameObject:
   - component: {fileID: 6649866873957166147}
   - component: {fileID: 8904686393059378973}
   - component: {fileID: 8811086988562351953}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tank_big_graphics
-  m_TagString: Untagged
+  m_TagString: Tank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -183,7 +183,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.08, y: 0, z: -0.32}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.6659, y: 1.6659, z: 1.6659}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7299391007947824965}
@@ -234,7 +234,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7299391007947824965}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bigTank_exp1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 2076976174110168935}
   - component: {fileID: 1623887752578063650}
   - component: {fileID: 3236491087659551722}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tank_big_wheels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -359,7 +359,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3908073566687837189}
   - component: {fileID: 779838446176438491}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AttackFxPool Big
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -413,7 +413,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3839182217602736440}
-  m_Layer: 0
+  - component: {fileID: 752977205233489691}
+  - component: {fileID: 4775940496745911206}
+  m_Layer: 9
   m_Name: headRotationPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -428,14 +430,72 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8585620373412824849}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: 0.084568605, z: -0, w: 0.9964177}
   m_LocalPosition: {x: -0.015, y: 2.42, z: 0.057}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3111352242853930717}
   m_Father: {fileID: 7299391007947824965}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 9.702, z: 0}
+--- !u!114 &752977205233489691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8585620373412824849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddf8551ed8ce643994e94c5a3ffda3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  ShootAction:
+    m_Name: Shoot
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: a08b8406-a16d-43c7-ba35-fa1ecc6913ed
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  shootCooldown: 0.6
+  lookDirection: {x: 0, y: 0, z: 0}
+  Sensetivity: 5
+  ShootRange: 20
+  anim: {fileID: 8811086988562351953}
+  fxPool: {fileID: 779838446176438491}
+  Bullet: {fileID: 2001698453959095254, guid: 2af59d0011aa1c4499ee40972fb716fa, type: 3}
+--- !u!114 &4775940496745911206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8585620373412824849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
+  m_Actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: 
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &8842385587324388951
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,7 +507,7 @@ GameObject:
   - component: {fileID: 9014370204221092352}
   - component: {fileID: 125930467047205065}
   - component: {fileID: 315060212111513006}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tank_big_head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -538,7 +598,7 @@ GameObject:
   - component: {fileID: 8429886123337490702}
   - component: {fileID: 7884094165842426453}
   - component: {fileID: 5867504296027805155}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tank_big_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -630,8 +690,16 @@ PrefabInstance:
       value: AttackFX_3
       objectReference: {fileID: 0}
     - target: {fileID: 347885607950104087, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 347885607950104087, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178012034156615974, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1206514817529110984, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
       propertyPath: m_LocalScale.x
@@ -689,6 +757,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1292949929348282891, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2806267262783065666, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -700,6 +772,14 @@ PrefabInstance:
     - target: {fileID: 2806267262783065666, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3129710093605393040, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3904794326222702238, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3937488082499461313, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
       propertyPath: m_LocalScale.x
@@ -736,6 +816,18 @@ PrefabInstance:
     - target: {fileID: 5734511565549899315, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6386502335841642744, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6807481912091312213, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7311901688712069956, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7680664585811778853, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
       propertyPath: m_LocalScale.x
@@ -792,8 +884,16 @@ PrefabInstance:
       value: AttackFX_1
       objectReference: {fileID: 0}
     - target: {fileID: 347885607950104087, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 347885607950104087, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178012034156615974, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1206514817529110984, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
       propertyPath: m_LocalScale.x
@@ -851,6 +951,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1292949929348282891, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2806267262783065666, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -862,6 +966,14 @@ PrefabInstance:
     - target: {fileID: 2806267262783065666, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3129710093605393040, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3904794326222702238, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3937488082499461313, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
       propertyPath: m_LocalScale.x
@@ -898,6 +1010,18 @@ PrefabInstance:
     - target: {fileID: 5734511565549899315, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6386502335841642744, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6807481912091312213, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7311901688712069956, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7680664585811778853, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
       propertyPath: m_LocalScale.x
@@ -954,8 +1078,16 @@ PrefabInstance:
       value: AttackFX_4
       objectReference: {fileID: 0}
     - target: {fileID: 347885607950104087, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 347885607950104087, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178012034156615974, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1206514817529110984, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
       propertyPath: m_LocalScale.x
@@ -1013,6 +1145,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1292949929348282891, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2806267262783065666, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -1024,6 +1160,14 @@ PrefabInstance:
     - target: {fileID: 2806267262783065666, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3129710093605393040, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3904794326222702238, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3937488082499461313, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
       propertyPath: m_LocalScale.x
@@ -1060,6 +1204,18 @@ PrefabInstance:
     - target: {fileID: 5734511565549899315, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6386502335841642744, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6807481912091312213, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7311901688712069956, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7680664585811778853, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
       propertyPath: m_LocalScale.x
@@ -1116,8 +1272,16 @@ PrefabInstance:
       value: AttackFX_5
       objectReference: {fileID: 0}
     - target: {fileID: 347885607950104087, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 347885607950104087, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178012034156615974, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1206514817529110984, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
       propertyPath: m_LocalScale.x
@@ -1175,6 +1339,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1292949929348282891, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2806267262783065666, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -1186,6 +1354,14 @@ PrefabInstance:
     - target: {fileID: 2806267262783065666, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3129710093605393040, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3904794326222702238, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3937488082499461313, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
       propertyPath: m_LocalScale.x
@@ -1222,6 +1398,18 @@ PrefabInstance:
     - target: {fileID: 5734511565549899315, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6386502335841642744, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6807481912091312213, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7311901688712069956, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7680664585811778853, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
       propertyPath: m_LocalScale.x
@@ -1278,8 +1466,16 @@ PrefabInstance:
       value: AttackFX_2
       objectReference: {fileID: 0}
     - target: {fileID: 347885607950104087, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 347885607950104087, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178012034156615974, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1206514817529110984, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
       propertyPath: m_LocalScale.x
@@ -1337,6 +1533,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1292949929348282891, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2806267262783065666, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -1348,6 +1548,14 @@ PrefabInstance:
     - target: {fileID: 2806267262783065666, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3129710093605393040, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3904794326222702238, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3937488082499461313, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
       propertyPath: m_LocalScale.x
@@ -1384,6 +1592,18 @@ PrefabInstance:
     - target: {fileID: 5734511565549899315, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6386502335841642744, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6807481912091312213, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7311901688712069956, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7680664585811778853, guid: 6559e3a720f3b8f4a8a1818109b803ba, type: 3}
       propertyPath: m_LocalScale.x

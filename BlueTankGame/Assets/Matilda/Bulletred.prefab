@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 1568490530418455121}
   - component: {fileID: 377696725296833435}
   - component: {fileID: 8040768763804805894}
-  m_Layer: 0
-  m_Name: Bullet
+  m_Layer: 6
+  m_Name: Bulletred
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,3 +127,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30a70bf553ec2cf4b9cc866993507f1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletPrefab
+  speed: 0.5
+  time: 2
