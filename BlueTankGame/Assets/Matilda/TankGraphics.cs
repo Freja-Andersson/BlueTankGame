@@ -16,10 +16,10 @@ public class TankGraphics : MonoBehaviour
     private void Update()
     {
         //debug
-        if(fireAction.WasPerformedThisFrame())
-        {
-            AttackVisuals();
-        }
+       // if(fireAction.WasPerformedThisFrame())
+       // {
+        //    AttackVisuals();
+        //}
 
     }
     public void AttackVisuals()
@@ -27,5 +27,6 @@ public class TankGraphics : MonoBehaviour
         anim.SetTrigger("attack");
         fxPool.SpawnFX();
         //bulletPool.SpawnBullet();
-    } */
+    }
+    */
 }
