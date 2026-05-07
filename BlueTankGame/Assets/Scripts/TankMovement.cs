@@ -11,14 +11,17 @@ public class TankMovement : MonoBehaviour
     Vector3 movementDirection;
 
     Rigidbody tankRigidbody;
+    GameManager gamemanager;
 
     void Awake()
     {
         tankRigidbody = GetComponent<Rigidbody>();
+        gamemanager = FindAnyObjectByType<GameManager>();
     }
 
     void FixedUpdate()
     {
+        //if(gamemanager.currentState != GameManager.GameState.Playing) { return; }
         HandleMovement();
     }
 
