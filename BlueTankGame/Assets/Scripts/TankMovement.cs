@@ -10,16 +10,11 @@ public class TankMovement : MonoBehaviour
     Vector2 moveInput;
     Vector3 movementDirection;
 
-    //InputAction moveAction;
-    PlayerInput playerInput;
     Rigidbody tankRigidbody;
 
     void Awake()
     {
-        playerInput = GetComponent<PlayerInput>();
         tankRigidbody = GetComponent<Rigidbody>();
-        
-        //moveAction = InputSystem.actions.FindAction("Move");
     }
 
     void FixedUpdate()
@@ -31,14 +26,6 @@ public class TankMovement : MonoBehaviour
     {
         moveInput = context.ReadValue<Vector2>();
     }
-
-    /* public void OnMove(InputValue context)
-    {
-        moveInput = context.Get<Vector2>();
-
-        Debug.Log("Move input received: " + moveInput);
-
-    } */
 
     void HandleMovement() // rotate the tank to face the movement direction
     {
