@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class HealthTank : MonoBehaviour
 {
+    [SerializeField] int damageAmount = 1;
+
     HealthScript healthScript;
     void Start()
     {
@@ -17,7 +19,7 @@ public class HealthTank : MonoBehaviour
     { 
       if (collision.gameObject.CompareTag("Bullet"))
       {
-          healthScript.TakeDamage(5);
-        }
+          healthScript.TakeDamage(damageAmount);
+      }
     }
 }

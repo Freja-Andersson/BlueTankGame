@@ -9,8 +9,7 @@ public class TankShoot : MonoBehaviour
     bool ShootDelay = false;
     [SerializeField] float shootCooldown = 1f;
     [SerializeField] Vector3 lookDirection;
-    [SerializeField] float Sensetivity = 5f;
-    [SerializeField] float ShootRange = 20f;
+    [SerializeField] float Sensetivity = 5f;  
     [SerializeField] Animator anim;
     [SerializeField] AttackFxPool fxPool;
     [SerializeField] GameObject Bullet;

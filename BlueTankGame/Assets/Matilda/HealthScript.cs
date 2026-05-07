@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class HealthScript : MonoBehaviour
 {
-        [SerializeField] private float maxHealth = 10f;
-        private float currentHealth;
+        [SerializeField] private int maxHealth = 10;
+        private int currentHealth;
     
         void Awake()
         {
             currentHealth = maxHealth;
         }
     
-        public void TakeDamage(float damageAmount)
+        public void TakeDamage(int damageAmount)
         {
             currentHealth -= damageAmount;
             if (currentHealth <= 0f)
