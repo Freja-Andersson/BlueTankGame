@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HealthTank : MonoBehaviour
@@ -8,9 +9,15 @@ public class HealthTank : MonoBehaviour
         healthScript = GetComponent<HealthScript>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+       
+    }
+    void OnCollisionEnter(Collision collision)
+    { 
+      if (collision.gameObject.CompareTag("Bullet"))
+      {
+          healthScript.TakeDamage(5);
+        }
     }
 }
