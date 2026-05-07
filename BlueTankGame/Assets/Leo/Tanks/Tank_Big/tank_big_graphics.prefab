@@ -30,6 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3730469026112798376}
+  - {fileID: 3908073566687837189}
   m_Father: {fileID: 9014370204221092352}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1249665518973776223
@@ -186,7 +187,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7299391007947824965}
-  - {fileID: 3908073566687837189}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8904686393059378973
@@ -203,7 +203,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TankGraphics
   anim: {fileID: 8811086988562351953}
   fxPool: {fileID: 779838446176438491}
-  bulletPool: {fileID: 0}
 --- !u!95 &8811086988562351953
 Animator:
   serializedVersion: 7
@@ -375,9 +374,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4744030061713393633}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0033047278, y: -4.102566e-10, z: 0.000000007181003, w: 0.9999946}
-  m_LocalPosition: {x: -0.04, y: 1.175, z: 1.616}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.018510832, y: -2.5350616e-10, z: 0.0000000071882433, w: 0.9998287}
+  m_LocalPosition: {x: -0.08888881, y: 0.06508517, z: 2.1794114}
+  m_LocalScale: {x: 2.2222223, y: 2.222222, z: 2.222222}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6560113835973610742}
@@ -385,7 +384,7 @@ Transform:
   - {fileID: 3507249439101805428}
   - {fileID: 5451490529704370296}
   - {fileID: 5607973541546997079}
-  m_Father: {fileID: 6649866873957166147}
+  m_Father: {fileID: 3797848393360122016}
   m_LocalEulerAnglesHint: {x: 0.379, y: 0, z: 0}
 --- !u!114 &779838446176438491
 MonoBehaviour:
