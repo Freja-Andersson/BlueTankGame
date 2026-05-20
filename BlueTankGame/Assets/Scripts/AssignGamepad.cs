@@ -4,8 +4,8 @@ using UnityEngine.InputSystem.Users;
 
 public class AssignGamepad : MonoBehaviour
 {
-    [SerializeField] PlayerInput player1;
-    [SerializeField] PlayerInput player2;
+    [SerializeField] PlayerInput bigTank;
+    [SerializeField] PlayerInput smallTank;
 
     void OnEnable()
     {
@@ -18,7 +18,7 @@ public class AssignGamepad : MonoBehaviour
         InputSystem.onDeviceChange -= OnDeviceChange;
     }
 
-    private void OnDeviceChange(InputDevice device, InputDeviceChange change)
+    void OnDeviceChange(InputDevice device, InputDeviceChange change)
     {
         if (change == InputDeviceChange.Added || change == InputDeviceChange.Removed)
         {
@@ -27,9 +27,9 @@ public class AssignGamepad : MonoBehaviour
     }
     void AssignDevices()
     {
-        if (player1 == null || player2 == null) { return; }
-        if (player1 != null) player1.user.UnpairDevices();
-        if (player2 != null) player2.user.UnpairDevices();
+        if (bigTank == null || smallTank == null) { return; }
+        if (bigTank != null) bigTank.user.UnpairDevices();
+        if (smallTank != null) smallTank.user.UnpairDevices();
 
         var gamepads = Gamepad.all;
         var keyboard = Keyboard.current;
@@ -37,20 +37,20 @@ public class AssignGamepad : MonoBehaviour
 
         if (gamepads.Count == 0)
         {
-            InputUser.PerformPairingWithDevice(keyboard, player1.user);
-            InputUser.PerformPairingWithDevice(keyboard, player2.user);
+            InputUser.PerformPairingWithDevice(keyboard, bigTank.user);
+            InputUser.PerformPairingWithDevice(keyboard, smallTank.user);
             RenamePlayers();
         }
         else if (gamepads.Count == 1)
         {
-            InputUser.PerformPairingWithDevice(gamepads[0], player1.user);
-            InputUser.PerformPairingWithDevice(keyboard, player2.user);
+            InputUser.PerformPairingWithDevice(gamepads[0], bigTank.user);
+            InputUser.PerformPairingWithDevice(keyboard, smallTank.user);
             RenamePlayers();
         }
         else if (gamepads.Count == 2)
         {
-            InputUser.PerformPairingWithDevice(gamepads[0], player1.user);
-            InputUser.PerformPairingWithDevice(gamepads[1], player2.user);
+            InputUser.PerformPairingWithDevice(gamepads[0], bigTank.user);
+            InputUser.PerformPairingWithDevice(gamepads[1], smallTank.user);
             RenamePlayers();
         }
 
@@ -79,15 +79,15 @@ public class AssignGamepad : MonoBehaviour
         } */
 
 
-        player1.user.AssociateActionsWithUser(player1.actions);
-        player2.user.AssociateActionsWithUser(player2.actions);
+        bigTank.user.AssociateActionsWithUser(bigTank.actions);
+        smallTank.user.AssociateActionsWithUser(smallTank.actions);
 
     }
 
     void RenamePlayers()
     {
-        player1.gameObject.name = "Player1";
-        player2.gameObject.name = "Player2";
+        bigTank.gameObject.name = "BigTank";
+        smallTank.gameObject.name = "SmallTank";
     }
 
 }
