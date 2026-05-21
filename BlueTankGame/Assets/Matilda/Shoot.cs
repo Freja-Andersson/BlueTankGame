@@ -13,6 +13,7 @@ public class TankShoot : MonoBehaviour
     [SerializeField] Animator anim;
     [SerializeField] AttackFxPool fxPool;
     [SerializeField] GameObject Bullet;
+    
 
 
 

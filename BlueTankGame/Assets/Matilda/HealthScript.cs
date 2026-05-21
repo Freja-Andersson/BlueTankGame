@@ -18,8 +18,17 @@ public class HealthScript : MonoBehaviour
                 Die();
             }
         }
-    
-        private void Die()
+
+        public void Heal(int healAmount)
+        {
+            currentHealth += healAmount;
+            if (currentHealth > maxHealth)
+            {
+                currentHealth = maxHealth;
+            }
+        } 
+
+    private void Die()
         {     
             Debug.Log(gameObject.name + " has died.");
             Destroy(gameObject);
