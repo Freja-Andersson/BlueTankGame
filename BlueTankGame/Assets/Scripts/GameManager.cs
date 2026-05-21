@@ -28,8 +28,7 @@ public class GameManager : MonoBehaviour
         MainMenu,
         ChoseTank,
         Playing,
-        GameOver,
-        QuitGame
+        GameOver
     }
 
     public GameState currentState = GameState.MainMenu;
@@ -58,9 +57,6 @@ public class GameManager : MonoBehaviour
     {
         switch (currentState)
         {
-            case GameState.MainMenu: // se till att båda spelarna trycka på knapparna
-                break;
-
             case GameState.ChoseTank: // när båda spelare har valt varsin tank så kan spelet börja
                 break;
 
@@ -69,7 +65,6 @@ public class GameManager : MonoBehaviour
                 break;
 
             case GameState.GameOver: // fixa game over/win scene
-                Debug.Log("Game over");
                 HandleGameOver();
                 break;
         }

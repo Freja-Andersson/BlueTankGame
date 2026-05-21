@@ -21,7 +21,7 @@ public class TankMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        //if (gameManager.currentState != GameManager.GameState.Playing) { return; }
+        if (gameManager.currentState != GameManager.GameState.Playing) { return; }
         HandleMovement();
     }
 

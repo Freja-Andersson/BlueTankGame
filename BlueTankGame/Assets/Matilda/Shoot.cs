@@ -13,35 +13,49 @@ public class TankShoot : MonoBehaviour
     [SerializeField] Animator anim;
     [SerializeField] AttackFxPool fxPool;
     [SerializeField] GameObject Bullet;
-    
 
+    Vector2 lookInput;
 
+    GameManager gameManager;
 
     void Start()
     {
-        ShootAction = InputSystem.actions.FindAction("Attack");
-        LookAction = InputSystem.actions.FindAction("Look");
+        gameManager = FindAnyObjectByType<GameManager>();
     }
 
     void Update()
-    {       
-       Vector2 lookInput = LookAction.ReadValue<Vector2>();
-       Vector3 lookDirection = new Vector3(lookInput.x, 0f, lookInput.y);
+    {
+        if (gameManager.currentState != GameManager.GameState.Playing) { return; }
+        HandleLooking();
+    }
 
-       if (lookDirection.sqrMagnitude > 0.01f)
-       {
+    public void OnLooking(InputAction.CallbackContext context)
+    {
+        lookInput = context.ReadValue<Vector2>();
+        Debug.Log("tank looking");
+    }
+
+    void HandleLooking()
+    {
+        Vector3 lookDirection = new Vector3(lookInput.x, 0f, lookInput.y);
+
+        if (lookDirection.sqrMagnitude > 0.01f)
+        {
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookDirection), Time.deltaTime * Sensetivity);
-       }
+        }
+    }
 
-       if (ShootAction.WasPerformedThisFrame() && ShootDelay == false)
-       {
+    public void OnShoot(InputAction.CallbackContext context)
+    {
+        if (gameManager.currentState != GameManager.GameState.Playing) { return; }
+        if (context.performed && ShootDelay == false)
+        {
             print("shoot");
             anim.SetTrigger("attack");
             fxPool.SpawnFX();
             Instantiate(Bullet, transform.position, transform.rotation);
             StartCoroutine(ShootCooldown());
         }
-
     }
 
     IEnumerator ShootCooldown()
