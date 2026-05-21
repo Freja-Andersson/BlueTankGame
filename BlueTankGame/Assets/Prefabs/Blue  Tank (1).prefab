@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &406287163926026535
+--- !u!1 &1318260330782548805
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,41 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7821161324428561168}
-  - component: {fileID: 6290127228673522444}
-  - component: {fileID: 8064449355150095632}
-  - component: {fileID: 8748062593399266406}
-  - component: {fileID: 2140909897957528084}
+  - component: {fileID: 7961588468430501401}
+  - component: {fileID: 6129740397927310790}
+  - component: {fileID: 4674493135382745345}
+  - component: {fileID: 3099421996412708049}
+  - component: {fileID: 6396563379253366528}
   m_Layer: 0
-  m_Name: Blue Tank
+  m_Name: Blue  Tank (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7821161324428561168
+--- !u!4 &7961588468430501401
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 406287163926026535}
+  m_GameObject: {fileID: 1318260330782548805}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 4.77, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 5098871124338625137}
+  - {fileID: 464078879063299820}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &6290127228673522444
+--- !u!65 &6129740397927310790
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 406287163926026535}
+  m_GameObject: {fileID: 1318260330782548805}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -57,13 +57,13 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.1162295, y: 1.3380378, z: 1.9922705}
   m_Center: {x: 0.0031076074, y: 0.7865339, z: 0.02944684}
---- !u!54 &8064449355150095632
+--- !u!54 &4674493135382745345
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 406287163926026535}
+  m_GameObject: {fileID: 1318260330782548805}
   serializedVersion: 5
   m_Mass: 1
   m_LinearDamping: 0
@@ -84,13 +84,13 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8748062593399266406
+--- !u!114 &3099421996412708049
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 406287163926026535}
+  m_GameObject: {fileID: 1318260330782548805}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2140909897957528084}
+      - m_Target: {fileID: 6396563379253366528}
         m_TargetAssemblyTypeName: TankMovement, Assembly-CSharp
         m_MethodName: Move
         m_Mode: 0
@@ -126,11 +126,35 @@ MonoBehaviour:
     m_ActionId: 351f2ccd-1f9f-44bf-9bec-d62ac5c5f408
     m_ActionName: 'Player/Move[/XInputControllerWindows/leftStick,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5785633755522035124}
+        m_TargetAssemblyTypeName: TankShoot, Assembly-CSharp
+        m_MethodName: OnLooking
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 6b444451-8a00-4d00-a97e-f47457f736a8
     m_ActionName: 'Player/Look[/XInputControllerWindows/rightStick,/Mouse/delta,/Pen/delta]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5785633755522035124}
+        m_TargetAssemblyTypeName: TankShoot, Assembly-CSharp
+        m_MethodName: OnShoot
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 6c2ab1b8-8984-453a-af3d-a3c78ae1679a
     m_ActionName: 'Player/Attack[/XInputControllerWindows/buttonWest,/Mouse/leftButton,/Keyboard/enter]'
   - m_PersistentCalls:
@@ -202,32 +226,44 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &2140909897957528084
+--- !u!114 &6396563379253366528
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 406287163926026535}
+  m_GameObject: {fileID: 1318260330782548805}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 299976c85517d2945ac4f15a0078b00d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TankMovement
-  moveSpeed: 3
+  moveSpeed: 5
   rotateSensitivity: 1.5
   moveThresholdAngle: 35
---- !u!1001 &1912841225277924914
+--- !u!1001 &6501421018510195375
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 7821161324428561168}
+    m_TransformParent: {fileID: 7961588468430501401}
     m_Modifications:
     - target: {fileID: 3361248577734575147, guid: f27101189840fc143b7137d9f5a6fae4, type: 3}
       propertyPath: m_Name
       value: tank_big_graphics
+      objectReference: {fileID: 0}
+    - target: {fileID: 6649866873957166147, guid: f27101189840fc143b7137d9f5a6fae4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6649866873957166147, guid: f27101189840fc143b7137d9f5a6fae4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6649866873957166147, guid: f27101189840fc143b7137d9f5a6fae4, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6649866873957166147, guid: f27101189840fc143b7137d9f5a6fae4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -239,7 +275,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6649866873957166147, guid: f27101189840fc143b7137d9f5a6fae4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6649866873957166147, guid: f27101189840fc143b7137d9f5a6fae4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -247,15 +283,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6649866873957166147, guid: f27101189840fc143b7137d9f5a6fae4, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6649866873957166147, guid: f27101189840fc143b7137d9f5a6fae4, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6649866873957166147, guid: f27101189840fc143b7137d9f5a6fae4, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6649866873957166147, guid: f27101189840fc143b7137d9f5a6fae4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -274,8 +310,19 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f27101189840fc143b7137d9f5a6fae4, type: 3}
---- !u!4 &5098871124338625137 stripped
+--- !u!4 &464078879063299820 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6649866873957166147, guid: f27101189840fc143b7137d9f5a6fae4, type: 3}
-  m_PrefabInstance: {fileID: 1912841225277924914}
+  m_PrefabInstance: {fileID: 6501421018510195375}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5785633755522035124 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 752977205233489691, guid: f27101189840fc143b7137d9f5a6fae4, type: 3}
+  m_PrefabInstance: {fileID: 6501421018510195375}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddf8551ed8ce643994e94c5a3ffda3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
