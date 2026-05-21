@@ -59,25 +59,18 @@ public class GameManager : MonoBehaviour
         switch (currentState)
         {
             case GameState.MainMenu: // se till att båda spelarna trycka på knapparna
-                Debug.Log("Main Menu");
                 break;
 
             case GameState.ChoseTank: // när båda spelare har valt varsin tank så kan spelet börja
-                Debug.Log("Chosing tank");
                 break;
 
             case GameState.Playing: // inget kan röra på sig eller hända innan spelet har börjat
-                Debug.Log("Playing");
                 HandlePlaying();
                 break;
 
             case GameState.GameOver: // fixa game over/win scene
                 Debug.Log("Game over");
                 HandleGameOver();
-                break;
-
-            case GameState.QuitGame: // fixa game over/win scene
-                Debug.Log("Quitting game");
                 break;
         }
     }
