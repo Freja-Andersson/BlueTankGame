@@ -3,9 +3,11 @@ using UnityEngine;
 public class HealthScript : MonoBehaviour
 {
         [SerializeField] private int maxHealth = 10;
-        private int currentHealth;
-    
-        void Awake()
+        [SerializeField]  private int currentHealth;
+        [SerializeField] int damageAmount = 1;
+        [SerializeField] int healAmount = 1;
+
+    void Awake()
         {
             currentHealth = maxHealth;
         }
@@ -34,5 +36,18 @@ public class HealthScript : MonoBehaviour
             Destroy(gameObject);
     }
 
-   
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Bullet"))
+        {
+            Debug.Log("Bullet collide");
+            TakeDamage(damageAmount);
+        }
+        if (other.CompareTag("Pickup"))
+        {
+            Debug.Log("Pickup collide");
+            Heal(healAmount);
+        }
+    }
+
 }
