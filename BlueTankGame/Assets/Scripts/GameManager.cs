@@ -37,7 +37,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         startMenuPanel.SetActive(true);
-        choseTankPanel.SetActive(false);
         gameOverOrWinPanel.SetActive(false);
 
         //Check if the buttons get pressed and then call the corresponing function
@@ -72,8 +71,7 @@ public class GameManager : MonoBehaviour
     void StartGame() // when startbutton is pressed, the game start and menu dissapears
     {
         currentState = GameState.ChoseTank;
-        startMenuPanel.SetActive(false);
-        choseTankPanel.SetActive(true);
+        choseTankPanel.transform.position = startMenuPanel.transform.position;
     }
 
     void HandleChosingTank()
@@ -83,6 +81,7 @@ public class GameManager : MonoBehaviour
         // ifall båda knapparna är nertryckta (spelarna har båda valt vilken tank), så börjar spelet
         currentState = GameState.Playing;
         choseTankPanel.SetActive(false);
+        startMenuPanel.SetActive(false);
     }
 
     void HandlePlaying()
