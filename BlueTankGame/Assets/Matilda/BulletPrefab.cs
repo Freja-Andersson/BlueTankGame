@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 
 public class BulletPrefab : MonoBehaviour
 {
-    [SerializeField] private float speed = 0.5f;
+    [SerializeField] private float speed = 0.0000000005f;
     [SerializeField] private float time = 2f;
 
     private void Start()
@@ -23,7 +23,7 @@ public class BulletPrefab : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnCollisionEnter(Collision collision)
+   /* private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Tank"))
         {
@@ -31,4 +31,20 @@ public class BulletPrefab : MonoBehaviour
             Destroy(gameObject);
         }
     }
+   */
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Tank"))
+        {
+            Debug.Log("Bullet collide");
+            Destroy(gameObject);
+        }
+        
+        if (other.CompareTag("Terrain"))
+        {
+            Debug.Log("Bullet collide");
+            Destroy(gameObject);
+        }
+    }
+
 }

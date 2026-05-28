@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 4674493135382745345}
   - component: {fileID: 3099421996412708049}
   - component: {fileID: 6396563379253366528}
-  m_Layer: 0
+  - component: {fileID: 2655569158635632697}
+  m_Layer: 9
   m_Name: Blue  Tank (1)
-  m_TagString: Untagged
+  m_TagString: Tank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -238,9 +239,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 299976c85517d2945ac4f15a0078b00d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TankMovement
-  moveSpeed: 5
+  moveSpeed: 4.5
   rotateSensitivity: 1.5
   moveThresholdAngle: 35
+--- !u!114 &2655569158635632697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318260330782548805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b33e41271b6f2b6488456d4edf56c8ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthScript
+  maxHealth: 5
+  currentHealth: 0
+  damageAmount: 1
+  healAmount: 1
 --- !u!1001 &6501421018510195375
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -249,6 +266,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7961588468430501401}
     m_Modifications:
+    - target: {fileID: 752977205233489691, guid: f27101189840fc143b7137d9f5a6fae4, type: 3}
+      propertyPath: Bullet
+      value: 
+      objectReference: {fileID: 2001698453959095254, guid: 065912d6ebb6bc241ac9a6512c9a468c, type: 3}
     - target: {fileID: 3361248577734575147, guid: f27101189840fc143b7137d9f5a6fae4, type: 3}
       propertyPath: m_Name
       value: tank_big_graphics
@@ -304,6 +325,10 @@ PrefabInstance:
     - target: {fileID: 6649866873957166147, guid: f27101189840fc143b7137d9f5a6fae4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585620373412824849, guid: f27101189840fc143b7137d9f5a6fae4, type: 3}
+      propertyPath: m_TagString
+      value: Tank
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -13,6 +13,7 @@ public class TankShoot : MonoBehaviour
     [SerializeField] Animator anim;
     [SerializeField] AttackFxPool fxPool;
     [SerializeField] GameObject Bullet;
+    [SerializeField] Transform shootPoint;
 
     Vector2 lookInput;
 
@@ -25,14 +26,14 @@ public class TankShoot : MonoBehaviour
 
     void Update()
     {
-        if (gameManager.currentState != GameManager.GameState.Playing) { return; }
+        if (gameManager.currentState != GameManager.GameState.Playing) 
+        { return; }
         HandleLooking();
     }
 
     public void OnLooking(InputAction.CallbackContext context)
     {
         lookInput = context.ReadValue<Vector2>();
-        Debug.Log("tank looking");
     }
 
     void HandleLooking()
@@ -53,7 +54,7 @@ public class TankShoot : MonoBehaviour
             print("shoot");
             anim.SetTrigger("attack");
             fxPool.SpawnFX();
-            Instantiate(Bullet, transform.position, transform.rotation);
+            Instantiate(Bullet, shootPoint.position, shootPoint.rotation);
             StartCoroutine(ShootCooldown());
         }
     }
