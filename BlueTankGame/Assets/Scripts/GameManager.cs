@@ -13,8 +13,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject gameOverOrWinPanel;
 
     [SerializeField] Button startButton;
-    [SerializeField] Button bigTankButton;
-    [SerializeField] Button smallTankButton;
+    [SerializeField] Button bigTankButtonP1;
+    [SerializeField] Button smallTankButtonP1;
+    [SerializeField] Button bigTankButtonP2;
+    [SerializeField] Button smallTankButtonP2;
     [SerializeField] Button quitButton;
     [SerializeField] Button restartButton;
 
@@ -33,7 +35,10 @@ public class GameManager : MonoBehaviour
 
     public GameState currentState = GameState.MainMenu;
 
-
+    private void Awake()
+    {
+        choseTankPanel.SetActive(false);
+    }
     void Start()
     {
         startMenuPanel.SetActive(true);
@@ -71,6 +76,8 @@ public class GameManager : MonoBehaviour
     void StartGame() // when startbutton is pressed, the game start and menu dissapears
     {
         currentState = GameState.ChoseTank;
+        choseTankPanel.SetActive(true);
+        startMenuPanel.SetActive(false);
         choseTankPanel.transform.position = startMenuPanel.transform.position;
     }
 
