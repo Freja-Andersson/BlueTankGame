@@ -14,6 +14,7 @@ public class TankShoot : MonoBehaviour
     [SerializeField] AttackFxPool fxPool;
     [SerializeField] GameObject Bullet;
     [SerializeField] Transform shootPoint;
+    [SerializeField] AudioSource shootSound;
 
     Vector2 lookInput;
 
@@ -51,6 +52,7 @@ public class TankShoot : MonoBehaviour
         if (gameManager.currentState != GameManager.GameState.Playing) { return; }
         if (context.performed && ShootDelay == false)
         {
+            shootSound.Play();
             print("shoot");
             anim.SetTrigger("attack");
             fxPool.SpawnFX();

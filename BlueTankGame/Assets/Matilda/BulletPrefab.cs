@@ -6,6 +6,7 @@ public class BulletPrefab : MonoBehaviour
 {
     [SerializeField] private float speed = 0.0000000005f;
     [SerializeField] private float time = 2f;
+    [SerializeField] private GameObject Particle;
 
     private void Start()
     {
@@ -36,15 +37,19 @@ public class BulletPrefab : MonoBehaviour
     {
         if (other.CompareTag("Tank"))
         {
-            Debug.Log("Bullet collide");
-            Destroy(gameObject);
+            BulletDestroy();
         }
         
         if (other.CompareTag("Terrain"))
         {
-            Debug.Log("Bullet collide");
-            Destroy(gameObject);
+           BulletDestroy();
         }
+    }
+    void BulletDestroy()
+    {
+        Instantiate(Particle, transform.position, Quaternion.identity);
+        Debug.Log("Bullet collide");      
+        Destroy(gameObject);
     }
 
 }

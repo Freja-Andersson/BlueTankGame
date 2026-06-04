@@ -1,25 +1,30 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class HealthScript : MonoBehaviour
 {
-    [SerializeField] private int maxHealth = 10;
+    [SerializeField] private int maxHealth;
     [SerializeField] private int currentHealth;
 
     [SerializeField] private int damageAmount = 1;
     [SerializeField] private int healAmount = 1;
     Winner winner;
+    [SerializeField] private TextMeshProUGUI Health;
+    [SerializeField] private AudioSource damageSound;
+    [SerializeField] private AudioSource healSound;
 
     private void Awake()
     {
         currentHealth = maxHealth;
-        
+        Health.text = "Health: " + currentHealth;
     }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-
+        damageSound.Play();
+        Health.text = "Health: " + currentHealth;
         if (currentHealth <= 0)
         {
             Die();
@@ -29,10 +34,13 @@ public class HealthScript : MonoBehaviour
     public void Heal(int heal)
     {
         currentHealth += heal;
+        healSound.Play();
+        Health.text = "Health: " + currentHealth;
 
-        if (currentHealth > maxHealth)
+        if (currentHealth >= maxHealth)
         {
             currentHealth = maxHealth;
+            Health.text = "Health: " + currentHealth;
         }
     }
 

@@ -131,6 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BulletPrefab
   speed: 0.8
   time: 2
+  Particle: {fileID: 184908578536004132, guid: 744894e0a6d07834c82a0f7ffa17d926, type: 3}
 --- !u!54 &-6682280834296704767
 Rigidbody:
   m_ObjectHideFlags: 0

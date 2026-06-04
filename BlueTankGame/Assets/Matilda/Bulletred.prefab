@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.4277, y: 0.36651, z: 3.44224}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5932134143056621266}
@@ -108,6 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BulletPrefab
   speed: 1
   time: 2
+  Particle: {fileID: 184908578536004132, guid: 744894e0a6d07834c82a0f7ffa17d926, type: 3}
 --- !u!136 &1863691437837332085
 CapsuleCollider:
   m_ObjectHideFlags: 0
